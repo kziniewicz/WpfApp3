@@ -1,0 +1,49 @@
+<Window x:Class="WpfApp2.View.SortTasks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApp2.View"
+        mc:Ignorable="d"
+        Title="SortTasks" Height="300" Width="400">
+    <Grid>
+        <Border Background="#eff2f7" CornerRadius="10">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="150"/>
+                    <ColumnDefinition Width="Auto" MinWidth="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Sort by" FontWeight="Bold" Margin="10,0,10,10" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="Ascending/Descending" FontWeight="Bold" Margin="10,0,10,10" VerticalAlignment="Center"/>
+
+                <RadioButton Grid.Row="1" Grid.Column="0" Content="Name" Name="NameRadioButton" Checked="RadioButtonChecked"/>
+                <RadioButton Grid.Row="2" Grid.Column="0" Content="Category" Name="CategoryRadioButton" Checked="RadioButtonChecked"/>
+                <RadioButton Grid.Row="3" Grid.Column="0" Content="Priority" Name="PriorityRadioButton" Checked="RadioButtonChecked"/>
+                <RadioButton Grid.Row="4" Grid.Column="0" Content="Start Date" Name="StartDateRadioButton" Checked="RadioButtonChecked"/>
+                <RadioButton Grid.Row="5" Grid.Column="0" Content="End Date" Name="EndDateRadioButton" Checked="RadioButtonChecked"/>
+                
+                <ComboBox Grid.Row="1" Grid.Column="1" Name="sortOrder">
+                    <ComboBoxItem Content="Ascending"/>
+                    <ComboBoxItem Content="Descending"/>
+                </ComboBox>
+                
+                <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                    <Button Content="Sort" Width="100" Height="30" Margin="0,20,10,0" Click="SortButton_Click"/>
+                    <Button Content="Cancel" Width="100" Height="30" Margin="0,20,0,0" Click="CancelButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
